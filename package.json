@@ -1,6 +1,6 @@
 {
     "name": "star-wars-array",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Node package for creating an array which is indexed in the order of the Star Wars films",
     "author": {
         "name": "Jack Davenport",

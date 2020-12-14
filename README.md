@@ -81,7 +81,7 @@ For shared functions, please see the documentation for the regular Javascript Ar
 |`indexOf()`|`number`|[See Array.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)|
 |`includes()`|`boolean`|[See Array.prototype.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)|
 |`toNormalArray()`|`array`|Returns the values as a regular Javascript array with start-to-end ordering.|
-|`toNormalArray(boolean: removeGaps)`|`array`|Returns the values as a regular Javascript array with start-to-end ordering. If `removeGaps` is true, then any gaps left by the reordering are removed.|
+|`toOrderedArray(boolean: removeGaps)`|`array`|Returns the values as a regular Javascript array with SWArray ordering. If `removeGaps` is true, then any gaps left by the reordering are removed.|
 |`toString()`|`string`|[See Array.prototype.toString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)|
 |`keys()`|`array`|[See Array.prototype.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)|
 |`map()`|`SWArray`|[See Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)|
