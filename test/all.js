@@ -26,6 +26,25 @@ it("has the correct indexing", () => {
     assert.strictEqual(arr[9], 10);
 });
 
+it("executes push() correctly", () => {
+    let arr = new SWArray([1, 2, 3]);
+    assert.strictEqual(arr.length, 3);
+
+    arr.push(5);
+    arr.push(2);
+    arr.push(7);
+    assert.strictEqual(arr.length, 6);
+    assert.strictEqual(arr[0], 5);
+    assert.strictEqual(arr[1], 2);
+    assert.strictEqual(arr[2], 7);
+
+    arr.push(10, 4, 9);
+    assert.strictEqual(arr.length, 9);
+    assert.strictEqual(arr[6], 10);
+    assert.strictEqual(arr[7], 4);
+    assert.strictEqual(arr[8], 9);
+});
+
 it("returns the correct length", () => {
     let arr = new SWArray([1, 2, 3]);
     assert.strictEqual(arr.length, 3);
@@ -63,4 +82,22 @@ it("prints as string correctly", () => {
     let arr3 = new SWArray(['abc','def','ghi']);
     assert.strictEqual(arr3.toString(), 'abc,def,ghi');
 
+});
+
+it("executes forEach() correctly", () => {
+    let swArray = new SWArray([1, 2, 3, 4, 5, 6]);
+    swArray.forEach((val, idx, arr) => {
+        assert.strictEqual(swArray[idx], val);
+        assert.strictEqual(swArray, arr);
+    });
+
+    let swa2 = new SWArray();
+    swa2.forEach(() => {
+        assert.fail("Should not run on empty array");
+    });
+
+    let swa3 = new SWArray([1]);
+    swa3.forEach(function() {
+        assert.strictEqual(this, swa2);
+    }, swa2);
 });

@@ -1,3 +1,8 @@
+/**
+ * star-wars-array
+ * Copyright Jack Davenport 2020
+ */
+
 const INDEX_TABLE = [3, 4, 5, 0, 1, 2];
 
 function isNumeric(value) {
@@ -14,8 +19,21 @@ module.exports = class SWArray {
         }
     }
 
-    push(val) {
-        this[this.#getNextIndex(this.length)] = val;
+    push() {
+        for(let val of arguments) {
+            this[this.#getNextIndex(this.length)] = val;
+        }
+        return this.length;
+    }
+
+    forEach(cb, thisArg) {
+        if(thisArg) {
+            cb = cb.bind(thisArg);
+        }
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            cb(this[idx], idx, this);
+        }
     }
 
     get length() {
