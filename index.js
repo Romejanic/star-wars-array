@@ -1,0 +1,7 @@
+class SWArray {
+
+    push(item) {
+        
+    }
+
+}
