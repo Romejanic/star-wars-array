@@ -1,3 +1,5 @@
+const INDEX_TABLE = [3, 4, 5, 0, 1, 2];
+
 function isNumeric(value) {
     return /^-?\d+$/.test(value);
 }
@@ -20,11 +22,24 @@ module.exports = class SWArray {
         return Object.keys(this).filter(isNumeric).length;
     }
 
+    toNormalArray() {
+        let arr = [];
+        for(let i = 0; i < this.length; i++) {
+            arr[i] = this[this.#getNextIndex(i)];
+        }
+        return arr;
+    }
+
+    toString() {
+        // LOL
+        return this.toNormalArray().toString();
+    }
+
     #getNextIndex = (n) => { 
         if(n > 5) {
             return n;
         }
-        return [3, 4, 5, 0, 1, 2][n];
+        return INDEX_TABLE[n];
     }
 
 };
