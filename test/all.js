@@ -94,6 +94,21 @@ it("converts back to regular array", () => {
     assert.strictEqual(arr2.toNormalArray().length, 0);
 });
 
+it("converts back to ordered array", () => {
+    let arr = [1, 2, 3, 4, 5];
+    let swa = new SWArray(arr);
+    let toa = swa.toOrderedArray();
+
+    assert.strictEqual(toa.length, 6); // 1 extra by empty slot at toa[2]
+    assert.strictEqual(toa[0], 4);
+    assert.strictEqual(toa[1], 5);
+    assert.strictEqual(toa[3], 1);
+    assert.strictEqual(toa[4], 2);
+    assert.strictEqual(toa[5], 3);
+
+    assert.strictEqual(swa.toOrderedArray(true).length, 5);
+});
+
 it("prints as string correctly", () => {
 
     // should follow format of native js arrays

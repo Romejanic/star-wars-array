@@ -76,6 +76,18 @@ module.exports = class SWArray {
         return arr;
     }
 
+    toOrderedArray(removeGaps = false) {
+        let arr = [];
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            arr[idx] = this[idx];
+        }
+        if(removeGaps) {
+            arr = arr.filter(v => typeof v !== "undefined");
+        }
+        return arr;
+    }
+
     toString() {
         // LOL
         return this.toNormalArray().toString();
