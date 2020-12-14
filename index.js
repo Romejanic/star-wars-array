@@ -30,6 +30,16 @@ module.exports = class SWArray {
         return this.length;
     }
 
+    pop() {
+        if(this.length <= 0) {
+            return undefined;
+        }
+        let lastIdx = this.#getNextIndex(this.length-1);
+        let last = this[lastIdx];
+        delete this[lastIdx];
+        return last;
+    }
+
     forEach(cb, thisArg) {
         if(thisArg) {
             cb = cb.bind(thisArg);

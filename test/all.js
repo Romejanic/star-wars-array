@@ -55,6 +55,22 @@ it("executes push() correctly", () => {
     assert.strictEqual(arr[8], 9);
 });
 
+it("executes pop() correctly", () => {
+    let arr = new SWArray();
+    assert.strictEqual(arr.pop(), undefined);
+
+    let arr2 = new SWArray([1, 2, 3, 4, 5]);
+    assert.strictEqual(arr2.length, 5);
+    let pop = arr2.pop();
+    assert.strictEqual(arr2.length, 4);
+    assert.strictEqual(pop, 5);
+
+    let arr3 = new SWArray([1,1,1,1,1,1,1,1,1,1,1,1,2]);
+    let pop3 = arr3.pop();
+    assert.strictEqual(arr3.length, 12);
+    assert.strictEqual(pop3, 2);
+});
+
 it("returns the correct length", () => {
     let arr = new SWArray([1, 2, 3]);
     assert.strictEqual(arr.length, 3);
