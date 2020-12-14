@@ -19,6 +19,10 @@ module.exports = class SWArray {
         }
     }
 
+    get length() {
+        return Object.keys(this).filter(isNumeric).length;
+    }
+
     push() {
         for(let val of arguments) {
             this[this.#getNextIndex(this.length)] = val;
@@ -36,8 +40,18 @@ module.exports = class SWArray {
         }
     }
 
-    get length() {
-        return Object.keys(this).filter(isNumeric).length;
+    indexOf(search, start) {
+        if(typeof start !== "number") {
+            start = 3;
+        }
+        start = this.#resolveIndex(start);
+        for(let i = start; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            if(this[idx] == search) {
+                return idx;
+            }
+        }
+        return -1;
     }
 
     toNormalArray() {
@@ -79,6 +93,13 @@ module.exports = class SWArray {
             return n;
         }
         return INDEX_TABLE[n];
+    }
+
+    #resolveIndex = (i) => {
+        if(i > 5) {
+            return i;
+        }
+        return INDEX_TABLE.indexOf(i);
     }
 
 };

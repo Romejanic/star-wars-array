@@ -12,6 +12,16 @@ it("initialises correctly", () => {
     assert.strictEqual(arr2[3], 1);
 });
 
+it("doesn't count non-indexed fields", () => {
+    let arr = new SWArray([1, 2, 3]);
+    assert.strictEqual(arr.length, 3);
+
+    arr.foo = "bar";
+    arr.bar = "baz";
+
+    assert.strictEqual(arr.length, 3);
+});
+
 it("has the correct indexing", () => {
     let arr = new SWArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     assert.strictEqual(arr[3], 1);
@@ -141,4 +151,16 @@ it("executes map() correctly", () => {
     arr2.map(function() {
         assert.strictEqual(this, arr);
     }, arr);
+});
+
+it("executes indexOf() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+
+    assert.strictEqual(arr.indexOf(3), 5);
+    assert.strictEqual(arr.indexOf(6), 2);
+    assert.strictEqual(arr.indexOf(4), 0);
+
+    arr.push(3);
+    assert.strictEqual(arr.indexOf(3), 5);
+    assert.strictEqual(arr.indexOf(3, 0), 6);
 });
