@@ -53,6 +53,14 @@ module.exports = class SWArray {
         return this.toNormalArray().toString();
     }
 
+    keys() {
+        let arr = [];
+        for(let i = 0; i < this.length; i++) {
+            arr.push(this.#getNextIndex(i));
+        }
+        return arr;
+    }
+
     #getNextIndex = (n) => { 
         if(n > 5) {
             return n;

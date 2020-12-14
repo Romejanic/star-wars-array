@@ -101,3 +101,24 @@ it("executes forEach() correctly", () => {
         assert.strictEqual(this, swa2);
     }, swa2);
 });
+
+it("executes keys() correctly", () => {
+    let arr = new SWArray();
+    let key = arr.keys();
+    assert.strictEqual(key.length, 0);
+
+    let arr2 = new SWArray([1, 2, 3, 4, 5, 6]);
+    let key2 = arr2.keys();
+    assert.strictEqual(key2.length, 6);
+    assert.strictEqual(key2[0], 3);
+    assert.strictEqual(key2[1], 4);
+    assert.strictEqual(key2[2], 5);
+    assert.strictEqual(key2[3], 0);
+    assert.strictEqual(key2[4], 1);
+    assert.strictEqual(key2[5], 2);
+
+    arr2.push(1);
+    key2 = arr2.keys();
+    assert.strictEqual(key2.length, 7);
+    assert.strictEqual(key2[6], 6);
+});
