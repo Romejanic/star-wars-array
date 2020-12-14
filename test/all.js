@@ -122,3 +122,23 @@ it("executes keys() correctly", () => {
     assert.strictEqual(key2.length, 7);
     assert.strictEqual(key2[6], 6);
 });
+
+it("executes map() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+    let map = arr.map(v => v * 2);
+
+    assert.strictEqual(map.length, 6);
+    for(let i = 0; i < arr.length; i++) {
+        assert.strictEqual(map[i], arr[i] * 2);
+    }
+
+    arr.map((val, idx, a) => {
+        assert.strictEqual(arr[idx], val);
+        assert.strictEqual(arr, a);
+    });
+
+    let arr2 = new SWArray([1]);
+    arr2.map(function() {
+        assert.strictEqual(this, arr);
+    }, arr);
+});

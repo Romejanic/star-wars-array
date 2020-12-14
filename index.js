@@ -61,6 +61,19 @@ module.exports = class SWArray {
         return arr;
     }
 
+    map(cb, thisArg) {
+        if(thisArg) {
+            cb = cb.bind(thisArg);
+        }
+        let newArr = new SWArray();
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            let val = cb(this[idx], idx, this);
+            newArr.push(val);
+        }
+        return newArr;
+    }
+
     #getNextIndex = (n) => { 
         if(n > 5) {
             return n;
