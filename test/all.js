@@ -164,3 +164,13 @@ it("executes indexOf() correctly", () => {
     assert.strictEqual(arr.indexOf(3), 5);
     assert.strictEqual(arr.indexOf(3, 0), 6);
 });
+
+it("executes includes() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 3]);
+    assert.strictEqual(arr.includes(2), true);
+    assert.strictEqual(arr.includes(4), true);
+    assert.strictEqual(arr.includes(10), false);
+    assert.strictEqual(arr.includes(-5), false);
+    assert.strictEqual(arr.includes(3, 0), true);
+    assert.strictEqual(arr.includes(2, 1), false);
+});

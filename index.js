@@ -54,6 +54,10 @@ module.exports = class SWArray {
         return -1;
     }
 
+    includes(search, start) {
+        return this.indexOf(search, start) > -1;
+    }
+
     toNormalArray() {
         let arr = [];
         for(let i = 0; i < this.length; i++) {
