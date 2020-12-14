@@ -14,7 +14,7 @@
         "type": "git",
         "url": "https://github.com/Romejanic/star-wars-array.git"
     },
-    "keywords": ["star wars", "star", "wars", "geek", "array", "joke", "ordering"],
+    "keywords": ["star wars", "star", "wars", "geek", "array", "joke", "ordering", "meme"],
     "main": "index.js",
     "scripts": {
         "test": "mocha"
