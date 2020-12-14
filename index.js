@@ -3,6 +3,8 @@
  * Copyright Jack Davenport 2020
  */
 
+const util = require("util");
+
 const INDEX_TABLE = [3, 4, 5, 0, 1, 2];
 
 function isNumeric(value) {
@@ -91,6 +93,11 @@ module.exports = class SWArray {
     toString() {
         // LOL
         return this.toNormalArray().toString();
+    }
+
+    // Source: https://stackoverflow.com/a/62053603/2801489
+    [util.inspect.custom](depth, opts) {
+        return this.toOrderedArray(true);
     }
 
     keys() {

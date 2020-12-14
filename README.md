@@ -88,4 +88,5 @@ For shared functions, please see the documentation for the regular Javascript Ar
 
 ## Planned Features
 - Implement remaining native array functions ([full list here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#)).
-- 
+- More prequel memes (which are surprisingly lacking).
+- Make it iterable so using it with loops are more pleasant.
