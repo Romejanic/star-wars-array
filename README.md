@@ -3,8 +3,8 @@ Node package for creating an array which is indexed in the order of the Star War
 
 In other words, the indices for each array starts as follows:
 
-|3|4|5|0|1|2|6|7|8|
-|-|-|-|-|-|-|-|-|-|
+|3|4|5|0|1|2|6|7|8|...|
+|-|-|-|-|-|-|-|-|-|-|
 
 **NOTE:** This is an esoteric (joke) package. Although if you manage to actually use it in a meaningful way, I will be really impressed.
 
