@@ -88,5 +88,5 @@ class SWArray<T> {
    * @param cb Callback function
    * @param thisArg Optional, bind to local `this`
    */
-  map(cb: () => any, thisArg: any): Array<T>;
+  map(cb: (value: T, index: number, array: SWArray) => any, thisArg: any): Array<T>;
 }
