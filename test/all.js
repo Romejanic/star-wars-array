@@ -1,4 +1,5 @@
 const assert = require("assert");
+const { accessSync } = require("fs");
 const SWArray = require("../index");
 
 it("initialises correctly", () => {
@@ -261,6 +262,19 @@ it("executes some() correctly", () => {
     arr2.some(function() {
         assert.strictEqual(this, arr);
     }, arr);
+});
+
+it("executes shift() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5]);
+    assert.strictEqual(arr.length, 5);
+
+    let start = arr.shift();
+    assert.strictEqual(arr.length, 4);
+    assert.strictEqual(start, 1);
+    assert.strictEqual(arr[3], 2);
+
+    let arr2 = new SWArray();
+    assert.strictEqual(arr2.shift(), undefined);
 });
 
 // it("executes splice() correctly", () => {

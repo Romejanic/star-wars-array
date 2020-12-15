@@ -143,6 +143,20 @@ module.exports = class SWArray {
         return false;
     }
 
+    shift() {
+        if(this.length <= 0) {
+            return undefined;
+        }
+        let rem = this[3];
+        for(let i = 0; i < this.length-1; i++) {
+            let idx1 = this.#getNextIndex(i);
+            let idx2 = this.#getNextIndex(i+1);
+            this[idx1] = this[idx2];
+        }
+        delete this[this.#getNextIndex(this.length-1)];
+        return rem;
+    }
+
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {
     //     if(typeof deleteCount !== "undefined" && deleteCount <= 0) {
