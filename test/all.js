@@ -218,6 +218,18 @@ it("executes indexOf() correctly", () => {
     assert.strictEqual(arr.indexOf(3, 0), 6);
 });
 
+it("executes lastIndexOf() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+
+    assert.strictEqual(arr.lastIndexOf(3), 5);
+    assert.strictEqual(arr.lastIndexOf(6), 2);
+    assert.strictEqual(arr.lastIndexOf(4), 0);
+
+    arr.push(3);
+    assert.strictEqual(arr.lastIndexOf(3), 6);
+    assert.strictEqual(arr.lastIndexOf(3, 0), 5);
+});
+
 it("executes includes() correctly", () => {
     let arr = new SWArray([1, 2, 3, 4, 5, 3]);
     assert.strictEqual(arr.includes(2), true);

@@ -87,6 +87,7 @@ For shared functions, please see the documentation for the regular Javascript Ar
 |`pop()`|`any or undefined`|[See Array.prototype.pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)|
 |`forEach()`|`undefined`|[See Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)|
 |`indexOf()`|`number`|[See Array.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)|
+|`lastIndexOf()`|`number`|[See Array.prototype.lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)|
 |`includes()`|`boolean`|[See Array.prototype.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)|
 |`toNormalArray()`|`array`|Returns the values as a regular Javascript array with start-to-end ordering.|
 |`toOrderedArray(boolean: removeGaps)`|`array`|Returns the values as a regular Javascript array with SWArray ordering. If `removeGaps` is true, then any gaps left by the reordering are removed.|

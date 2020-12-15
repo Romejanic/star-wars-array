@@ -63,7 +63,24 @@ module.exports = class SWArray {
         start = this.#resolveIndex(start);
         for(let i = start; i < this.length; i++) {
             let idx = this.#getNextIndex(i);
-            if(this[idx] == search) {
+            if(this[idx] === search) {
+                return idx;
+            }
+        }
+        return -1;
+    }
+
+    lastIndexOf(search, fromIndex) {
+        let lastIndex = this.#getNextIndex(this.length - 1);
+        if(typeof fromIndex === "number") {
+            fromIndex = Math.max(0, Math.min(lastIndex, fromIndex));
+        } else {
+            fromIndex = lastIndex;
+        }
+        let start = this.#resolveIndex(fromIndex);
+        for(let i = start; i >= 0; i--) {
+            let idx = this.#getNextIndex(i);
+            if(this[idx] === search) {
                 return idx;
             }
         }
@@ -166,6 +183,8 @@ module.exports = class SWArray {
         }
         return arr;
     }
+
+
 
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {
