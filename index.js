@@ -160,6 +160,19 @@ module.exports = class SWArray {
         return false;
     }
 
+    every(cb, thisArg) {
+        if(thisArg) {
+            cb = cb.bind(thisArg);
+        }
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            if(!cb(this[idx], idx, this)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     shift() {
         if(this.length <= 0) {
             return undefined;

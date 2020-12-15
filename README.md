@@ -97,6 +97,7 @@ For shared functions, please see the documentation for the regular Javascript Ar
 |`values()`|`iterator`|[See Array.prototype.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)|
 |`sort()`|`SWArray`|[See Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)|
 |`some()`|`boolean`|[See Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)|
+|`every()`|`boolean`|[See Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)|
 |`shift()`|`any or undefined`|[See Array.prototype.shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)|
 |`reverse()`|`SWArray`|[See Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)|
 
