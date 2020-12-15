@@ -135,4 +135,11 @@ module.exports = class SWArray {
         return INDEX_TABLE.indexOf(i);
     }
 
+    *[Symbol.iterator]() {
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            yield this[idx];
+        }
+    }
+
 };

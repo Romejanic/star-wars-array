@@ -43,7 +43,15 @@ console.log(array.length); // prints 6
 
 **Wait so how tf do I iterate?**
 
-The easiest way to iterate over the array is to use the `SWArray.keys()` method as a lookup table to map the sequential indices of the loop to the correct indices for the array.
+The easiest way is to use a for loop with iteration (i.e. for-of loop).
+```js
+let arr = new SWArray(...);
+for(let val of arr) {
+    ...
+}
+```
+
+You can also use the `SWArray.keys()` method as a lookup table to map the sequential indices of the loop to the correct indices for the array.
 ```js
 let arr = new SWArray(...);
 let idx = arr.keys();

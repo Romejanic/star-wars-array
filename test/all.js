@@ -36,6 +36,16 @@ it("has the correct indexing", () => {
     assert.strictEqual(arr[9], 10);
 });
 
+it("iterates correctly", () => {
+    let arr = [1, 2, 3, 4, 5];
+    let swa = new SWArray(arr);
+
+    let i = 0;
+    for(let val of swa) {
+        assert.strictEqual(val, arr[i++]);
+    }
+});
+
 it("executes push() correctly", () => {
     let arr = new SWArray([1, 2, 3]);
     assert.strictEqual(arr.length, 3);
