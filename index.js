@@ -125,6 +125,11 @@ module.exports = class SWArray {
         return newArr;
     }
 
+    sort(comparator) {
+        let arr = this.toNormalArray().sort(comparator);
+        return new SWArray(arr);
+    }
+
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {
     //     if(typeof deleteCount !== "undefined" && deleteCount <= 0) {

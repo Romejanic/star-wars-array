@@ -227,6 +227,24 @@ it("executes includes() correctly", () => {
     assert.strictEqual(arr.includes(2, 1), false);
 });
 
+it("sorts correctly", () => {
+    let arr = new SWArray([6, 2, 9, 7]);
+
+    let arr2 = arr.sort();
+    assert.strictEqual(arr2.length, 4);
+    assert.strictEqual(arr2[3], 2);
+    assert.strictEqual(arr2[4], 6);
+    assert.strictEqual(arr2[5], 7);
+    assert.strictEqual(arr2[0], 9);
+
+    let arr3 = arr.sort((a,b) => b-a);
+    assert.strictEqual(arr3.length, 4);
+    assert.strictEqual(arr3[0], 2);
+    assert.strictEqual(arr3[5], 6);
+    assert.strictEqual(arr3[4], 7);
+    assert.strictEqual(arr3[3], 9);
+});
+
 // it("executes splice() correctly", () => {
 //     let arr = new SWArray([1, 2, 3, 4, 5, 6]);
 //     assert.strictEqual(arr.length, 6);
