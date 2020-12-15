@@ -197,7 +197,19 @@ module.exports = class SWArray {
         return arr;
     }
 
-
+    filter(cb, thisArg) {
+        if(thisArg) {
+            cb = cb.bind(thisArg);
+        }
+        let arr = new SWArray();
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            if(cb(this[idx], idx, this)) {
+                arr.push(this[idx]);
+            }
+        }
+        return arr;
+    }
 
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {

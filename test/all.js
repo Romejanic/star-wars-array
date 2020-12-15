@@ -294,6 +294,44 @@ it("executes every() correctly", () => {
     }, arr);
 });
 
+it("executes every() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+
+    assert.strictEqual(arr.every(n => n % 2 == 0), false);
+    assert.strictEqual(arr.every(n => n > 0), true);
+    assert.strictEqual(arr.every(n => n < 10), true);
+
+    arr.every((val, idx, a) => {
+        assert.strictEqual(arr[idx], val);
+        assert.strictEqual(arr, a);
+    });
+
+    let arr2 = new SWArray([1]);
+    arr2.every(function() {
+        assert.strictEqual(this, arr);
+    }, arr);
+});
+
+it("executes filter() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+
+    let flt = arr.filter(n => n > 3);
+    assert.strictEqual(flt.length, 3);
+    assert.strictEqual(flt[3], 4);
+    assert.strictEqual(flt[4], 5);
+    assert.strictEqual(flt[5], 6);
+
+    arr.filter((val, idx, a) => {
+        assert.strictEqual(arr[idx], val);
+        assert.strictEqual(arr, a);
+    });
+
+    let arr2 = new SWArray([1]);
+    arr2.filter(function() {
+        assert.strictEqual(this, arr);
+    }, arr);
+});
+
 it("executes shift() correctly", () => {
     let arr = new SWArray([1, 2, 3, 4, 5]);
     assert.strictEqual(arr.length, 5);
