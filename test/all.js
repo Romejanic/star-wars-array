@@ -245,6 +245,24 @@ it("sorts correctly", () => {
     assert.strictEqual(arr3[3], 9);
 });
 
+it("executes some() correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+
+    assert.strictEqual(arr.some(n => n % 2 == 0), true);
+    assert.strictEqual(arr.some(n => n > 3), true);
+    assert.strictEqual(arr.some(n => n < -10), false);
+
+    arr.some((val, idx, a) => {
+        assert.strictEqual(arr[idx], val);
+        assert.strictEqual(arr, a);
+    });
+
+    let arr2 = new SWArray([1]);
+    arr2.some(function() {
+        assert.strictEqual(this, arr);
+    }, arr);
+});
+
 // it("executes splice() correctly", () => {
 //     let arr = new SWArray([1, 2, 3, 4, 5, 6]);
 //     assert.strictEqual(arr.length, 6);

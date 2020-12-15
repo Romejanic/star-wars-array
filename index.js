@@ -130,6 +130,19 @@ module.exports = class SWArray {
         return new SWArray(arr);
     }
 
+    some(cb, thisArg) {
+        if(thisArg) {
+            cb = cb.bind(thisArg);
+        }
+        for(let i = 0; i < this.length; i++) {
+            let idx = this.#getNextIndex(i);
+            if(cb(this[idx], idx, this)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {
     //     if(typeof deleteCount !== "undefined" && deleteCount <= 0) {

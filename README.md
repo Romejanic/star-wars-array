@@ -94,8 +94,9 @@ For shared functions, please see the documentation for the regular Javascript Ar
 |`keys()`|`array`|[See Array.prototype.keys](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)|
 |`map()`|`SWArray`|[See Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)|
 |`values()`|`iterator`|[See Array.prototype.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)|
+|`sort()`|`SWArray`|[See Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)|
+|`some()`|`boolean`|[See Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)|
 
 ## Planned Features
 - Implement remaining native array functions ([full list here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#)).
 - More prequel memes (which are surprisingly lacking).
-- Make it iterable so using it with loops are more pleasant.
