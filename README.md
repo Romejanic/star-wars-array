@@ -105,3 +105,7 @@ For shared functions, please see the documentation for the regular Javascript Ar
 ## Planned Features
 - Implement remaining native array functions ([full list here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#)).
 - More prequel memes (which are surprisingly lacking).
+
+## Contributors
+
+- Thanks to [Christian Scillitoe](https://github.com/crscillitoe) for adding Typescript definitions!
