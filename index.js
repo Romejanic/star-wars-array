@@ -26,7 +26,11 @@ module.exports = class SWArray {
     }
 
     push() {
-        for(let val of arguments) {
+        let add = arguments;
+        if(add.length == 1 && Array.isArray(add[0])) {
+            add = add[0];
+        }
+        for(let val of add) {
             this[this.#getNextIndex(this.length)] = val;
         }
         return this.length;
@@ -121,6 +125,31 @@ module.exports = class SWArray {
         return newArr;
     }
 
+    // uhhhhhhhhhhhh i'll come back to that one
+    // splice(start, deleteCount) {
+    //     if(typeof deleteCount !== "undefined" && deleteCount <= 0) {
+    //         return new SWArray();
+    //     }
+    //     let toAdd = [];
+    //     if(arguments.length > 2) {
+    //         toAdd = arguments.splice(2);
+    //     }
+    //     let arr = new SWArray();
+    //     start = this.#resolveIndex(start);
+    //     if(typeof deleteCount === "undefined") {
+    //         deleteCount = this.length - start;
+    //     }
+    //     for(let i = start; i < deleteCount; i++) {
+    //         let idx = this.#getNextIndex(i);
+    //         arr.push(this[idx]);
+    //         delete this[idx];
+    //     }
+    //     if(toAdd.length > 0) {
+    //         this.push(toAdd);
+    //     }
+    //     return arr;
+    // }
+
     #getNextIndex = (n) => { 
         if(n > 5) {
             return n;
@@ -142,4 +171,7 @@ module.exports = class SWArray {
         }
     }
 
+    *values() {
+        return this[Symbol.iterator]();
+    }
 };

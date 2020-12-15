@@ -46,6 +46,17 @@ it("iterates correctly", () => {
     }
 });
 
+it("executes values() correctly", () => {
+    let arr = [1, 2, 3, 4, 5];
+    let swa = new SWArray(arr);
+    let itr = swa.values();
+
+    let i = 0;
+    for(let val of itr) {
+        assert.strictEqual(val, arr[i++]);
+    }
+});
+
 it("executes push() correctly", () => {
     let arr = new SWArray([1, 2, 3]);
     assert.strictEqual(arr.length, 3);
@@ -215,3 +226,18 @@ it("executes includes() correctly", () => {
     assert.strictEqual(arr.includes(3, 0), true);
     assert.strictEqual(arr.includes(2, 1), false);
 });
+
+// it("executes splice() correctly", () => {
+//     let arr = new SWArray([1, 2, 3, 4, 5, 6]);
+//     assert.strictEqual(arr.length, 6);
+
+//     let sub = arr.splice(0);
+//     console.log(arr);
+//     assert.strictEqual(arr.length, 3);
+//     assert.strictEqual(sub.length, 3);
+
+//     for(let i = 0; i < 3; i++) {
+//         assert.strictEqual(arr[i+3], i+1);
+//         assert.strictEqual(arr[i], i+4);
+//     }
+// });
