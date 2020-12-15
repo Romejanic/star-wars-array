@@ -277,6 +277,19 @@ it("executes shift() correctly", () => {
     assert.strictEqual(arr2.shift(), undefined);
 });
 
+it("reverses array correctly", () => {
+    let arr = new SWArray([1, 2, 3, 4, 5]);
+    assert.strictEqual(arr.length, 5);
+
+    let arr2 = arr.reverse();
+    assert.strictEqual(arr2.length, 5);
+    assert.strictEqual(arr2[3], 5);
+    assert.strictEqual(arr2[4], 4);
+    assert.strictEqual(arr2[5], 3);
+    assert.strictEqual(arr2[0], 2);
+    assert.strictEqual(arr2[1], 1);
+});
+
 // it("executes splice() correctly", () => {
 //     let arr = new SWArray([1, 2, 3, 4, 5, 6]);
 //     assert.strictEqual(arr.length, 6);

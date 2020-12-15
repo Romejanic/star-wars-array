@@ -157,6 +157,16 @@ module.exports = class SWArray {
         return rem;
     }
 
+    reverse() {
+        let arr = new SWArray();
+        for(let i = 0; i < this.length; i++) {
+            let idx1 = this.#getNextIndex(i);
+            let idx2 = this.#getNextIndex(this.length-1-i);
+            arr[idx1] = this[idx2];
+        }
+        return arr;
+    }
+
     // uhhhhhhhhhhhh i'll come back to that one
     // splice(start, deleteCount) {
     //     if(typeof deleteCount !== "undefined" && deleteCount <= 0) {

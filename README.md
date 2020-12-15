@@ -97,6 +97,7 @@ For shared functions, please see the documentation for the regular Javascript Ar
 |`sort()`|`SWArray`|[See Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)|
 |`some()`|`boolean`|[See Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)|
 |`shift()`|`any or undefined`|[See Array.prototype.shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)|
+|`reverse()`|`SWArray`|[See Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)|
 
 ## Planned Features
 - Implement remaining native array functions ([full list here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#)).
